@@ -11,6 +11,7 @@
 </body>
 
 <script>
+    // Generate computer answer
     // generate random number between 0 and 2 (inclusive)
     // put the number into the function
     // if the number is 0, computer picks rock
@@ -20,24 +21,29 @@
     function randomInt(min = 1, max = 3){
         let result = Math.floor(Math.random() * (max - min + 1) + min);
         return result;
-    }
+    };
 
     function computerPlay(){
         result = randomInt();
         if (result === 1){
-            console.log(result);
-            console.log("Rock");
             return "Rock";
         } else if (result === 2) {
-            console.log(result);
-            console.log("Paper");
             return "Paper";
         } else if (result === 3) {
-            console.log(result);
-            console.log("Scissors");
             return "Scissors";
         }
-    }
+    };
+
+
+    // Play round of Rock Paper Scissors
+    // ask player for input
+    // normalize player input to first letter capitalized
+    // put player input into play round function
+    // put computer answer into play round function
+    // compare answers
+    // print result of the game for the player
+
+
 </script>
 
 </html>
