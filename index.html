@@ -9,4 +9,23 @@
 <body>
     
 </body>
+
+<script>
+    // generate random number between 0 and 2 (inclusive)
+    // put the number into the function
+    // if the number is 0, computer picks rock
+    // if the number is 1, computer picks paper
+    // if the number is 2, computer picks scissors
+
+    function randomInt(min, max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function computerPlay(){
+        return Math.random();
+    }
+</script>
+
 </html>
