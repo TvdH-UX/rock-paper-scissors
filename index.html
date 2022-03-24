@@ -37,11 +37,38 @@
 
     // Play round of Rock Paper Scissors
     // ask player for input
-    // normalize player input to first letter capitalized
+    // normalize player input to lowercase
     // put player input into play round function
     // put computer answer into play round function
     // compare answers
     // print result of the game for the player
+
+    // Function which capitalizes first letter
+    function toCapitalized(string){
+        string = string.toLowerCase();
+        let firstPart = string.slice(0,1);
+        firstPart = firstPart.toUpperCase();
+        let secondPart = string.slice(1);
+        return firstPart + secondPart;
+    }
+
+    function playerSelection(){
+        let playerSelection = prompt("Rock, Paper or Scissors?");
+        playerSelection = toCapitalized(playerSelection);
+        return playerSelection;
+        // if (playerSelection === "rock"){
+        //     console.log("picked rock");
+        //     return "Rock";
+        // } else if (playerSelection === "paper"){
+        //     console.log("picked paper");
+        //     return "Paper";
+        // } else if (playerSelection === "scissors"){
+        //     console.log("picked scissors");
+        //     return "Scissors";
+        // };
+    };
+
+    playerSelection();
 
 
 </script>
