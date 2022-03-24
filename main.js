@@ -40,16 +40,24 @@ function toCapitalized(string){
     return firstPart + secondPart;
 }
 
+// Function which receives user input
 function playerInput(){
     let playerInput = prompt("Rock, Paper or Scissors?");
     playerInput = toCapitalized(playerInput);
     return playerInput;
 };
 
-const computerSelection = computerPlay();
-const playerSelection = playerInput();
+// Variables to save both responses
+let computerSelection;
+let playerSelection;
 
+// const computerSelection = computerPlay();
+// const playerSelection = playerInput();
+
+// Function to play a single round
 function playRound(playerSelection, computerSelection){
+    computerSelection = computerPlay();
+    playerSelection = playerInput();
     console.log(playerSelection);
     console.log(computerSelection);
     if (playerSelection === computerSelection){
@@ -72,3 +80,8 @@ function playRound(playerSelection, computerSelection){
 };
 
 console.log(playRound(playerSelection, computerSelection));
+
+// Function to play five rounds
+function game(){
+
+}
