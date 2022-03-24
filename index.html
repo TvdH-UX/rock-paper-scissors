@@ -10,67 +10,6 @@
     
 </body>
 
-<script>
-    // Generate computer answer
-    // generate random number between 0 and 2 (inclusive)
-    // put the number into the function
-    // if the number is 0, computer picks rock
-    // if the number is 1, computer picks paper
-    // if the number is 2, computer picks scissors
-
-    function randomInt(min = 1, max = 3){
-        let result = Math.floor(Math.random() * (max - min + 1) + min);
-        return result;
-    };
-
-    function computerPlay(){
-        result = randomInt();
-        if (result === 1){
-            return "Rock";
-        } else if (result === 2) {
-            return "Paper";
-        } else if (result === 3) {
-            return "Scissors";
-        }
-    };
-
-
-    // Play round of Rock Paper Scissors
-    // ask player for input
-    // normalize player input to lowercase
-    // put player input into play round function
-    // put computer answer into play round function
-    // compare answers
-    // print result of the game for the player
-
-    // Function which capitalizes first letter
-    function toCapitalized(string){
-        string = string.toLowerCase();
-        let firstPart = string.slice(0,1);
-        firstPart = firstPart.toUpperCase();
-        let secondPart = string.slice(1);
-        return firstPart + secondPart;
-    }
-
-    function playerSelection(){
-        let playerSelection = prompt("Rock, Paper or Scissors?");
-        playerSelection = toCapitalized(playerSelection);
-        return playerSelection;
-        // if (playerSelection === "rock"){
-        //     console.log("picked rock");
-        //     return "Rock";
-        // } else if (playerSelection === "paper"){
-        //     console.log("picked paper");
-        //     return "Paper";
-        // } else if (playerSelection === "scissors"){
-        //     console.log("picked scissors");
-        //     return "Scissors";
-        // };
-    };
-
-    playerSelection();
-
-
-</script>
+<script src="main.js"></script>
 
 </html>
