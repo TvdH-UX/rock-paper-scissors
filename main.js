@@ -58,30 +58,64 @@ let playerSelection;
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
     playerSelection = playerInput();
-    console.log(playerSelection);
-    console.log(computerSelection);
+    let result = "";
     if (playerSelection === computerSelection){
-        return "It's a tie!";
+        result = 3;
+        console.log("It's a Tie!")
+        return result;
     } else if (playerSelection == "Rock" && computerSelection == "Paper"){
-        return "You Lose! Paper beats Rock";
+        result = 2;
+        console.log("You Lose! Paper beats Rock")
+        return result;
     } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        return "You Win! Rock beats Scissors";
+        result = 1;
+        console.log("You Win! Rock beats Scissors")
+        return result;
     } else if (playerSelection == "Paper" && computerSelection == "Rock"){
-        return "You Win! Paper beats Rock";
+        result = 1;
+        console.log("You Win! Paper beats Rock")
+        return result;
     } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-        return "You Lose! Scissors beats Paper";
+        result = 2;
+        console.log("You Lose! Scissors beats Paper")
+        return result;
     } else if (playerSelection == "Scissors" && computerSelection == "Rock"){
-        return "You Lose! Rock beats Scissors";
+        result = 2;
+        console.log("You Lose! Rock beats Scissors")
+        return result;
     } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-        return "You Win! Scissors beats Paper";
-    } else {
-        return "Please enter either Rock, Paper or Scissors"
-    }
+        result = 1;
+        console.log("You Win! Scissors beats Paper")
+        return result;
+    };
 };
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
 
 // Function to play five rounds
 function game(){
-
-}
+    let playerPoints = 0;
+    let computerPoints = 0;
+    let ties = 0;
+    for (let i = 0; i < 5; i++){
+        playRound();
+        if (result == 3){
+            playerPoints++;
+        } else if (result == 2){
+            computerPoints++;
+        } else {
+            ties++;
+        }
+    };
+    console.log("Results:");
+    console.log("Player:" + playerPoints);
+    console.log("Computer: " + computerPoints);
+    console.log("Ties: " + ties);
+    if (playerPoints > computerPoints){
+        return "You win!"
+    } else if (playerPoints < computerPoints){
+        return "You lose!"
+    } else {
+        return "No winner was decided!"
+    }
+};
