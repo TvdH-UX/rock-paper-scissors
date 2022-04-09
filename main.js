@@ -91,34 +91,34 @@ function playRound(playerSelection, computerSelection){
 // Play until five rounds have been played
 // Print results and declare ultimate winner
 
-function game(){
-    let round = 0;
-    let playerPoints = 0;
-    let computerPoints = 0;
-    let ties = 0;
-    for (let i = 0; i < 5; i++){
-        round++;
-        console.log("Round: " + round);
-        let roundResult = playRound(playerSelection, computerSelection);
-        if (roundResult === 1){
-            playerPoints++;
-        } else if (roundResult === 2){
-            computerPoints++;
-        } else {
-            ties++;
-        };
-    };
-    console.log("Results:");
-    console.log("Player: " + playerPoints);
-    console.log("Computer: " + computerPoints);
-    console.log("Ties: " + ties);
-    if (playerPoints > computerPoints){
-        return "You win!"
-    } else if (playerPoints < computerPoints){
-        return "You lose!"
-    } else {
-        return "No winner was decided!"
-    };
-};
+// function game(){
+//     let round = 0;
+//     let playerPoints = 0;
+//     let computerPoints = 0;
+//     let ties = 0;
+//     for (let i = 0; i < 5; i++){
+//         round++;
+//         console.log("Round: " + round);
+//         let roundResult = playRound(playerSelection, computerSelection);
+//         if (roundResult === 1){
+//             playerPoints++;
+//         } else if (roundResult === 2){
+//             computerPoints++;
+//         } else {
+//             ties++;
+//         };
+//     };
+//     console.log("Results:");
+//     console.log("Player: " + playerPoints);
+//     console.log("Computer: " + computerPoints);
+//     console.log("Ties: " + ties);
+//     if (playerPoints > computerPoints){
+//         return "You win!"
+//     } else if (playerPoints < computerPoints){
+//         return "You lose!"
+//     } else {
+//         return "No winner was decided!"
+//     };
+// };
 
-game();
+// game();
