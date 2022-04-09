@@ -1,3 +1,21 @@
+// select buttons in html file
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+
+
+btnRock.addEventListener("click", () => {
+    console.log("rock button");
+});
+
+btnPaper.addEventListener("click", () => {
+    console.log("paper button");
+});
+
+btnScissors.addEventListener("click", () => {
+    console.log("scissors button");
+});
+
 // Generate computer answer
 // generate random number between 0 and 2 (inclusive)
 // put the number into the function
