@@ -3,19 +3,6 @@ const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
 
-
-btnRock.addEventListener("click", () => {
-    console.log("rock button");
-});
-
-btnPaper.addEventListener("click", () => {
-    console.log("paper button");
-});
-
-btnScissors.addEventListener("click", () => {
-    console.log("scissors button");
-});
-
 // Generate computer answer
 // generate random number between 0 and 2 (inclusive)
 // put the number into the function
@@ -50,20 +37,20 @@ function computerPlay(){
 // print result of the game for the player
 
 // Function which capitalizes first letter
-function toCapitalized(string){
-    string = string.toLowerCase();
-    let firstPart = string.slice(0,1);
-    firstPart = firstPart.toUpperCase();
-    let secondPart = string.slice(1);
-    return firstPart + secondPart;
-}
+// function toCapitalized(string){
+//     string = string.toLowerCase();
+//     let firstPart = string.slice(0,1);
+//     firstPart = firstPart.toUpperCase();
+//     let secondPart = string.slice(1);
+//     return firstPart + secondPart;
+// }
 
-// Function which receives user input
-function playerInput(){
-    let playerInput = prompt("Rock, Paper or Scissors?");
-    playerInput = toCapitalized(playerInput);
-    return playerInput;
-};
+// // Function which receives user input
+// function playerInput(){
+//     let playerInput = prompt("Rock, Paper or Scissors?");
+//     playerInput = toCapitalized(playerInput);
+//     return playerInput;
+// };
 
 // Variables to save both responses
 let computerSelection;
@@ -72,7 +59,6 @@ let playerSelection;
 // Function to play a single round
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
-    playerSelection = playerInput();
     console.log("Computer picks: " + computerSelection);
     console.log("Player picks: " + playerSelection);
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
@@ -99,6 +85,18 @@ function playRound(playerSelection, computerSelection){
     };
     return result;
 };
+
+btnRock.addEventListener("click", () => {
+    playRound("Rock", computerSelection);
+});
+
+btnPaper.addEventListener("click", () => {
+    playRound("Paper", computerSelection);
+});
+
+btnScissors.addEventListener("click", () => {
+    playRound("Scissors", computerSelection);
+});
 
 // Function to play five rounds
 
