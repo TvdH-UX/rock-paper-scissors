@@ -3,6 +3,9 @@ const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
 
+const playerSection = document.querySelector(".playerSection");
+const computerSection = document.querySelector(".computerSection");
+
 // Generate computer answer
 // generate random number between 0 and 2 (inclusive)
 // put the number into the function
@@ -86,16 +89,35 @@ function playRound(playerSelection, computerSelection){
     return result;
 };
 
+let pScore = 0;
+let cScore = 0;
+
+const pScoreCounter = document.createElement('p');
+pScoreCounter.textContent = pScore;
+playerSection.appendChild(pScoreCounter);
+
+const cScoreCounter = document.createElement('p');
+cScoreCounter.textContent = cScore;
+computerSection.appendChild(cScoreCounter);
+
+
+function calcScore (result){
+
+}
+
 btnRock.addEventListener("click", () => {
     playRound("Rock", computerSelection);
+    console.log(result);
 });
 
 btnPaper.addEventListener("click", () => {
     playRound("Paper", computerSelection);
+    console.log(result);
 });
 
 btnScissors.addEventListener("click", () => {
     playRound("Scissors", computerSelection);
+    console.log(result);
 });
 
 // Function to play five rounds
