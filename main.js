@@ -5,6 +5,8 @@ const btnScissors = document.querySelector("#scissors");
 
 const playerSection = document.querySelector(".playerSection");
 const computerSection = document.querySelector(".computerSection");
+const tiesSection = document.querySelector(".tiesSection");
+const winnerSection = document.querySelector(".winnerSection");
 
 // Generate computer answer
 // generate random number between 0 and 2 (inclusive)
@@ -91,6 +93,7 @@ function playRound(playerSelection, computerSelection){
 
 let pScore = 0;
 let cScore = 0;
+let ties = 0;
 
 const pScoreCounter = document.createElement('p');
 pScoreCounter.textContent = pScore;
@@ -100,24 +103,44 @@ const cScoreCounter = document.createElement('p');
 cScoreCounter.textContent = cScore;
 computerSection.appendChild(cScoreCounter);
 
+const tiesCounter = document.createElement('p');
+tiesCounter.textContent = ties;
+tiesSection.appendChild(tiesCounter);
+
+const winningPlayer = document.createElement('p');
+
 
 function calcScore (result){
-
+    if (result === 1){
+        pScore++;
+        pScoreCounter.textContent = pScore;
+        if (pScore === 5){
+            winningPlayer.textContent = "You win the game!"
+            winnerSection.appendChild(winningPlayer);
+        };
+    } else if (result === 2){
+        cScore++;
+        cScoreCounter.textContent = cScore;
+        if (cScore === 5){
+            winningPlayer.textContent = "The computer wins the game!"
+            winnerSection.appendChild(winningPlayer);
+        }
+    } else {
+        ties++;
+        tiesCounter.textContent = ties;
+    };
 }
 
 btnRock.addEventListener("click", () => {
-    playRound("Rock", computerSelection);
-    console.log(result);
+    calcScore(playRound("Rock", computerSelection));
 });
 
 btnPaper.addEventListener("click", () => {
-    playRound("Paper", computerSelection);
-    console.log(result);
+    calcScore(playRound("Paper", computerSelection));
 });
 
 btnScissors.addEventListener("click", () => {
-    playRound("Scissors", computerSelection);
-    console.log(result);
+    calcScore(playRound("Scissors", computerSelection));
 });
 
 // Function to play five rounds
