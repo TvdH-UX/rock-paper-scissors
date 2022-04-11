@@ -3,6 +3,7 @@ const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
 
+// Select result sections in html file
 const playerSection = document.querySelector(".playerSection");
 const computerSection = document.querySelector(".computerSection");
 const tiesSection = document.querySelector(".tiesSection");
@@ -30,32 +31,6 @@ function computerPlay(){
         return "Scissors";
     }
 };
-
-
-// Play round of Rock Paper Scissors
-// ask player for input
-// normalize player input to lowercase
-// capitalize first letter of player input
-// put player input into play round function
-// put computer answer into play round function
-// compare answers
-// print result of the game for the player
-
-// Function which capitalizes first letter
-// function toCapitalized(string){
-//     string = string.toLowerCase();
-//     let firstPart = string.slice(0,1);
-//     firstPart = firstPart.toUpperCase();
-//     let secondPart = string.slice(1);
-//     return firstPart + secondPart;
-// }
-
-// // Function which receives user input
-// function playerInput(){
-//     let playerInput = prompt("Rock, Paper or Scissors?");
-//     playerInput = toCapitalized(playerInput);
-//     return playerInput;
-// };
 
 // Variables to save both responses
 let computerSelection;
@@ -91,10 +66,12 @@ function playRound(playerSelection, computerSelection){
     return result;
 };
 
+// Variables to save scores
 let pScore = 0;
 let cScore = 0;
 let ties = 0;
 
+// Creating paragraph elements to append to result sections
 const pScoreCounter = document.createElement('p');
 pScoreCounter.textContent = pScore;
 playerSection.appendChild(pScoreCounter);
@@ -109,7 +86,7 @@ tiesSection.appendChild(tiesCounter);
 
 const winningPlayer = document.createElement('p');
 
-
+// Calculate score and decide winner
 function calcScore (result){
     if (pScore < 5 && cScore < 5){
         if (result === 1){
@@ -135,6 +112,7 @@ function calcScore (result){
     }
 }
 
+// Make buttons start a round and calculate score
 btnRock.addEventListener("click", () => {
     calcScore(playRound("Rock", computerSelection));
 });
@@ -146,44 +124,3 @@ btnPaper.addEventListener("click", () => {
 btnScissors.addEventListener("click", () => {
     calcScore(playRound("Scissors", computerSelection));
 });
-
-// Function to play five rounds
-
-// Start the first round of play
-// Compare answers of player and computer
-// Declare round winner or tie
-// Add point to their win counter
-// Play until five rounds have been played
-// Print results and declare ultimate winner
-
-// function game(){
-//     let round = 0;
-//     let playerPoints = 0;
-//     let computerPoints = 0;
-//     let ties = 0;
-//     for (let i = 0; i < 5; i++){
-//         round++;
-//         console.log("Round: " + round);
-//         let roundResult = playRound(playerSelection, computerSelection);
-//         if (roundResult === 1){
-//             playerPoints++;
-//         } else if (roundResult === 2){
-//             computerPoints++;
-//         } else {
-//             ties++;
-//         };
-//     };
-//     console.log("Results:");
-//     console.log("Player: " + playerPoints);
-//     console.log("Computer: " + computerPoints);
-//     console.log("Ties: " + ties);
-//     if (playerPoints > computerPoints){
-//         return "You win!"
-//     } else if (playerPoints < computerPoints){
-//         return "You lose!"
-//     } else {
-//         return "No winner was decided!"
-//     };
-// };
-
-// game();
