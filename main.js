@@ -111,24 +111,28 @@ const winningPlayer = document.createElement('p');
 
 
 function calcScore (result){
-    if (result === 1){
-        pScore++;
-        pScoreCounter.textContent = pScore;
-        if (pScore === 5){
-            winningPlayer.textContent = "You win the game!"
-            winnerSection.appendChild(winningPlayer);
+    if (pScore < 5 && cScore < 5){
+        if (result === 1){
+            pScore++;
+            pScoreCounter.textContent = pScore;
+            if (pScore === 5){
+                winningPlayer.textContent = "You win the game!"
+                winnerSection.appendChild(winningPlayer);
+            };
+        } else if (result === 2){
+            cScore++;
+            cScoreCounter.textContent = cScore;
+            if (cScore === 5){
+                winningPlayer.textContent = "The computer wins the game!"
+                winnerSection.appendChild(winningPlayer);
+            }
+        } else {
+            ties++;
+            tiesCounter.textContent = ties;
         };
-    } else if (result === 2){
-        cScore++;
-        cScoreCounter.textContent = cScore;
-        if (cScore === 5){
-            winningPlayer.textContent = "The computer wins the game!"
-            winnerSection.appendChild(winningPlayer);
-        }
     } else {
-        ties++;
-        tiesCounter.textContent = ties;
-    };
+        alert("Please reload the page to start a new game")
+    }
 }
 
 btnRock.addEventListener("click", () => {
