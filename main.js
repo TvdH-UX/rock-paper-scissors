@@ -39,28 +39,21 @@ let playerSelection;
 // Function to play a single round
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
-    console.log("Computer picks: " + computerSelection);
-    console.log("Player picks: " + playerSelection);
+    // console.log("Computer picks: " + computerSelection);
+    // console.log("Player picks: " + playerSelection);
     if (playerSelection == "Rock" && computerSelection == "Scissors"){
-        console.log("You win! Rock beats Scissors");
         result = 1;
     } else if (playerSelection == "Paper" && computerSelection == "Rock"){
-        console.log("You win! Paper beats Rock");
         result = 1;
     } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-        console.log("You win! Scissors beats Paper");
         result = 1;
     } else if (playerSelection == "Rock" && computerSelection == "Paper"){
-        console.log("You lose! Paper beats Rock");
         result = 2;
     } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-        console.log("You lose! Scissors beats Paper");
         result = 2;
     } else if (playerSelection == "Scissors" && computerSelection == "Rock"){
-        console.log("You lose! Rock beats Scissors");
         result = 2;
     } else if (playerSelection == computerSelection){
-        console.log("It's a tie!");
         result = 3;
     };
     return result;
